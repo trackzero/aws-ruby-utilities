@@ -1,4 +1,4 @@
-# www.github.com/trackzero/aws-ruby-utilities/backupmyvolumes.rb
+# from www.github.com/trackzero/aws-ruby-utilities
 # Script will back up all volumes in the current region
 # assumes presence of valid credentials
 # Snapshots will be named as YY.MM.DD.TAG
