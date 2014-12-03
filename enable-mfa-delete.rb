@@ -11,9 +11,9 @@ s3= AWS::S3.new(
   :access_key_id => 'ROOT_ACCESSKEYID',
   :secret_access_key => 'ROOT_SECRETACCESSKEY')
 
-puts 'Bucket: '
+print 'Bucket: '
 bucket_name = gets.chomp
-puts 'Current Token Value: '
+print 'Current Token Value: '
 mfa_token = gets.chomp
 bucket = s3.buckets[bucket_name]
 bucket.enable_versioning(
