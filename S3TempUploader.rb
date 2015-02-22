@@ -55,7 +55,7 @@ def OutputDoc(pol,sig)
       <p>
       Form valid until <b>#{@expy}</b>.<BR>
     <p>
-        <form action="https://jafupload.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+        <form action="https://#{@bucket}.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
           <input type="hidden" name="acl" value="private"> 
           <input type="hidden" name="key" value="incoming/${filename}">
           <input type="hidden" name="success_action_redirect" value="#{@sar}">
