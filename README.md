@@ -14,6 +14,29 @@ Snapshots will be named as <code>YY.MM.DD.TAG</code>
   * if tag not specified on volume, then TAG uses the Name tag of instance to which volume is attached.
   * If both are blank, TAG will say UNTAGGED.
 
+<H2>S3TempUploader.rb</h2>
+Create an "upload.html" file, good for 24 hours, to allow secure uploads via browser to a target S3 bucket/folder.  You can send the resulting upload.html (not the S3TempUploader.rb script!!!) file to others; they will be able to upload to your target location without needing access to your secret key.
+
+Adjust the "t" variable if you want the uploader to be valid for more than 24 hours.
+
+Note: you must specify your own access key/secret key. The IAM user you create should ONLY have access to write to the target S3 bucket/folder.  Policy attached to user will look something like this:
+<pre>
+     {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "S3Uploader",
+          "Effect": "Allow",
+          "Action": [
+            "s3:PutObject"
+          ],
+          "Resource": [
+            "arn:aws:s3:::YOURBUCKET/YOURFOLDER/*"
+          ]
+        }
+      ]
+    }
+</pre>
 
 <h2>enable-mfa-delete.rb</h2>
 Enable a bucket for MFA delete.
