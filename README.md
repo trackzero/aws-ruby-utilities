@@ -15,7 +15,7 @@ Snapshots will be named as <code>YY.MM.DD.TAG</code>
   * If both are blank, TAG will say UNTAGGED.
 
 <H2>S3TempUploader.rb</h2>
-Create an "upload.html" file, good for 24 hours, to allow secure uploads via browser to a target S3 bucket/folder.  You can send the resulting upload.html (not the S3TempUploader.rb script!!!) file to others; they will be able to upload to your target location without needing access to your secret key.
+Running this script creates a local "upload.html" file, good for 24 hours, to allow secure uploads via browser to a target S3 bucket/folder.  You can send the resulting upload.html (not the S3TempUploader.rb script!!!) file to others; they will be able to upload to your target location without needing access to your secret key.
 
 Adjust the "t" variable if you want the uploader to be valid for more than 24 hours.
 
